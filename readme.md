@@ -1,1 +1,2 @@
-See https://github.com/rusefi/rusefi/wiki/Custom-Firmware
+
+A PnP for Z31 Nissan brought to you by Turtledude
