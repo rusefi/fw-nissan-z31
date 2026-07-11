@@ -6,14 +6,50 @@
 // see comments at declaration in pin_repository.h
 const char* getBoardSpecificPinName(brain_pin_e brainPin) {
 	switch (brainPin) {
-		case Gpio::B14:
-			return "B14 Output";
+		case Gpio::A6:
+			return "J1.6 - Button 2";
+		case Gpio::A8:
+			return "106 - INJ 6";
+		case Gpio::A9:
+			return "102 - INJ 2";
+		case Gpio::B1:
+			return "10 - Clutch Switch";
+		case Gpio::B9:
+			return "6 - Main Relay";
+		case Gpio::C13:
+			return "5 - Ignition";
+		case Gpio::C6:
+			return "20 - Fuel Pump Relay";
+		case Gpio::D10:
+			return "105 - INJ 5";
+		case Gpio::D11:
+			return "103 - INJ 3";
+		case Gpio::D12:
+			return "2 - Idle Air Valve";
+		case Gpio::D13:
+			return "J1.7 - Low Side 3";
+		case Gpio::D15:
+			return "J1.8 - Low Side 1";
+		case Gpio::D2:
+			return "104 - INJ 4";
+		case Gpio::D3:
+			return "101 - INJ 1";
+		case Gpio::E11:
+			return "J1.23 - Flex Fuel";
+		case Gpio::E12:
+			return "8 - CAS Cam";
+		case Gpio::E13:
+			return "17 - CAS Crank";
+		case Gpio::E14:
+			return "29 - VSS";
+		case Gpio::E15:
+			return "J1.5 - Button 3";
 		case Gpio::E2:
-			return "VR/Hall 1 (E2)";
+			return "J1.25 - Ignition Aux 5";
 		case Gpio::E3:
-			return "VR/Hall 2 (E3)";
+			return "J1.17 - Ignition Aux 4";
 		case Gpio::E4:
-			return "VR/Hall 3 (E4)";
+			return "J1.9 - Ignition Aux 3";
 		default:
 			return nullptr;
 	}

@@ -4,6 +4,34 @@
 #pragma once
 
 Gpio GENERATED_OUTPUTS[] = {
-	Gpio::B14, // B14 Output
-// "B14 Output",
+	Gpio::MM100_INJ1, // 101 - INJ 1
+	Gpio::MM100_INJ2, // 102 - INJ 2
+	Gpio::MM100_INJ3, // 103 - INJ 3
+	Gpio::MM100_INJ5, // 104 - INJ 4
+	Gpio::MM100_INJ4, // 105 - INJ 5
+	Gpio::MM100_INJ6, // 106 - INJ 6
+	Gpio::MM100_INJ8, // 2 - Idle Air Valve
+	Gpio::MM100_IGN1, // 5 - Ignition
+	Gpio::MM100_IGN7, // 6 - Main Relay
+	Gpio::MM100_OUT_PWM2, // 20 - Fuel Pump Relay
+	Gpio::MM100_OUT_PWM1, // J1.7 - Low Side 3
+	Gpio::MM100_INJ7, // J1.8 - Low Side 1
+	Gpio::MM100_IGN3, // J1.9 - Ignition Aux 3
+	Gpio::MM100_IGN4, // J1.17 - Ignition Aux 4
+	Gpio::MM100_IGN5, // J1.25 - Ignition Aux 5
+// "101 - INJ 1",
+// "102 - INJ 2",
+// "103 - INJ 3",
+// "104 - INJ 4",
+// "105 - INJ 5",
+// "106 - INJ 6",
+// "2 - Idle Air Valve",
+// "5 - Ignition",
+// "6 - Main Relay",
+// "20 - Fuel Pump Relay",
+// "J1.7 - Low Side 3",
+// "J1.8 - Low Side 1",
+// "J1.9 - Ignition Aux 3",
+// "J1.17 - Ignition Aux 4",
+// "J1.25 - Ignition Aux 5",
 }
