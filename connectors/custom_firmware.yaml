@@ -1,81 +1,319 @@
+meta: config/boards/hellen_mm100_meta.h
+
+# Nissan Z31 300ZX pinout, see docs/schematic-notes.md
 pins:
-  - id: B14
+  # ================== Z31 OEM ECU CONNECTOR - injector/power block ==================
+  - pin: 101
     class: outputs
-    ts_name: B14 Output
+    meta: MM100_INJ1
+    ts_name: 101 - INJ 1
+    function: Cylinder 1 injector
+    type: inj
 
-  - id: EFI_ADC_0
-    class: analog_inputs
-# getAdcChannelBrainPin in 'stm32_adc.cpp' says EFI_ADC_0 is PA0
-    ts_name: On-board Battery Sense (A0)
+  - pin: 102
+    class: outputs
+    meta: MM100_INJ2
+    ts_name: 102 - INJ 2
+    function: Cylinder 2 injector
+    type: inj
 
-  - id: EFI_ADC_1
-    class: analog_inputs
-    ts_name: Analog Inputs 1 (A1)
+  - pin: 103
+    class: outputs
+    meta: MM100_INJ3
+    ts_name: 103 - INJ 3
+    function: Cylinder 3 injector
+    type: inj
 
-  - id: EFI_ADC_2
-    class: analog_inputs
-    ts_name: Analog Inputs 2 (A2)
+  # note the 104/105 crossover to module channels INJ5/INJ4
+  - pin: 104
+    class: outputs
+    meta: MM100_INJ5
+    ts_name: 104 - INJ 4
+    function: Cylinder 4 injector
+    type: inj
 
-  - id: EFI_ADC_3
-    class: analog_inputs
-    ts_name: Analog Inputs 3 (A3)
+  - pin: 105
+    class: outputs
+    meta: MM100_INJ4
+    ts_name: 105 - INJ 5
+    function: Cylinder 5 injector
+    type: inj
 
-  - id: EFI_ADC_4
-    class: analog_inputs
-    ts_name: Analog Inputs 4 (A4)
+  - pin: 106
+    class: outputs
+    meta: MM100_INJ6
+    ts_name: 106 - INJ 6
+    function: Cylinder 6 injector
+    type: inj
 
-  - id: EFI_ADC_5
-    class: analog_inputs
-    ts_name: On-board MAP (A5)
+  - pin: 108
+    function: 12V supply
+    type: 12v
 
-  - id: EFI_ADC_6
-    class: analog_inputs
-    ts_name: Analog Inputs 6 (A6)
+  - pin: 114
+    function: 12V supply
+    type: 12v
 
-  - id: EFI_ADC_7
-    class: analog_inputs
-    ts_name: Analog Inputs 7 (A7)
+  - pin: 107
+    function: Power ground
+    type: gnd
 
-  - id: EFI_ADC_8
-    class: analog_inputs
-    ts_name: On-board BARO (B0)
+  - pin: 109
+    function: Power ground
+    type: gnd
 
-  - id: EFI_ADC_9
-    class: analog_inputs
-    ts_name: Analog Inputs 9 (B1)
+  - pin: 112
+    function: Power ground
+    type: gnd
 
-  - id: EFI_ADC_10
-    class: analog_inputs
-    ts_name: Analog Inputs 10 (C0)
+  - pin: 113
+    function: Power ground
+    type: gnd
 
-  - id: EFI_ADC_11
-    class: analog_inputs
-    ts_name: Primary On-board O2 (C1)
+  # ================== Z31 OEM ECU CONNECTOR - 20-pin block ==================
+  - pin: 2
+    class: outputs
+    meta: MM100_INJ8
+    ts_name: 2 - Idle Air Valve
+    function: Idle air valve solenoid (low side)
 
-  - id: EFI_ADC_12
-    class: analog_inputs
-    ts_name: Secondary On-board O2 (C2)
+  - pin: 5
+    class: outputs
+    meta: MM100_IGN1
+    ts_name: 5 - Ignition
+    function: OEM ignition power transistor, logic level
+    type: ign
 
-  - id: EFI_ADC_13
-    class: analog_inputs
-    ts_name: Analog Inputs 13 (C3)
+  - pin: 6
+    class: outputs
+    meta: MM100_IGN7
+    ts_name: 6 - Main Relay
+    function: Main relay control (always-hot low side)
 
-  - id: EFI_ADC_14
-    class: analog_inputs
-    ts_name: Analog Inputs 14 (C4)
-
-  - id: EFI_ADC_15
-    class: analog_inputs
-    ts_name: Analog Inputs 15 (C5)
-
-  - id: [E2, E2]
+  - pin: 8
+    id: [E12, E12]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 1 (E2)
+    ts_name: 8 - CAS Cam
+    function: Optical CAS cam signal
+    type: hall
 
-  - id: [E3, E3]
+  - pin: 10
+    id: [B1, B1]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 2 (E3)
+    ts_name: 10 - Clutch Switch
+    function: Clutch switch input
 
-  - id: [E4, E4]
+  - pin: 16
+    function: Ground
+    type: gnd
+
+  - pin: 17
+    id: [E13, E13]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 3 (E4)
+    ts_name: 17 - CAS Crank
+    function: Optical CAS crank signal
+    type: hall
+
+  - pin: 20
+    class: outputs
+    meta: MM100_OUT_PWM2
+    ts_name: 20 - Fuel Pump Relay
+    function: Fuel pump relay control (low side)
+
+  # ================== Z31 OEM ECU CONNECTOR - sensor/power block ==================
+  - pin: 21
+    function: Knock sensor input (software knock on PA2)
+    type: av
+
+  - pin: 23
+    class: analog_inputs
+    meta: MM100_IN_CLT_ANALOG
+    ts_name: 23 - CLT
+    function: Coolant temperature sensor
+    type: at
+
+  - pin: 26
+    function: Ground
+    type: gnd
+
+  - pin: 27
+    function: 12V from main relay
+    type: 12v
+
+  - pin: 28
+    function: Ground
+    type: gnd
+
+  - pin: 29
+    id: [E14, E14]
+    class: [switch_inputs, event_inputs]
+    ts_name: 29 - VSS
+    function: Vehicle speed sensor
+
+  - pin: 31
+    class: analog_inputs
+    meta: MM100_IN_O2S2_ANALOG
+    ts_name: 31 - MAF
+    function: Mass air flow sensor signal
+    type: av
+
+  - pin: 34
+    function: 12V from ignition key (voltage sense PA5)
+    type: 12v
+
+  - pin: 35
+    function: 12V from main relay
+    type: 12v
+
+  - pin: 36
+    function: Ground
+    type: gnd
+
+  # ================== J1 AUX CONNECTOR (TE 6437288-2, 34 pins) ==================
+  - pin: J1_1
+    function: Ground
+    type: gnd
+
+  - pin: J1_2
+    function: CAN low
+    type: can
+
+  - pin: J1_3
+    function: CAN high
+    type: can
+
+  - pin: J1_4
+    function: +5V sensor supply
+    type: 5v
+
+  - pin: J1_5
+    id: [E15, E15]
+    class: [switch_inputs, event_inputs]
+    ts_name: J1.5 - Button 3
+    function: Digital input / button 3
+
+  - pin: J1_6
+    id: [A6, A6]
+    class: [switch_inputs, event_inputs]
+    ts_name: J1.6 - Button 2
+    function: Digital input / button 2
+
+  - pin: J1_7
+    class: outputs
+    meta: MM100_OUT_PWM1
+    ts_name: J1.7 - Low Side 3
+    function: Aux low side output 3
+
+  - pin: J1_8
+    class: outputs
+    meta: MM100_INJ7
+    ts_name: J1.8 - Low Side 1
+    function: Aux low side output 1
+
+  - pin: J1_9
+    class: outputs
+    meta: MM100_IGN3
+    ts_name: J1.9 - Ignition Aux 3
+    function: Aux ignition output 3, logic level
+    type: ign
+
+  - pin: J1_17
+    class: outputs
+    meta: MM100_IGN4
+    ts_name: J1.17 - Ignition Aux 4
+    function: Aux ignition output 4, logic level
+    type: ign
+
+  - pin: J1_18
+    function: Ground
+    type: gnd
+
+  - pin: J1_19
+    function: WBO1 Pump Current (Ip)
+    type: wbo
+
+  - pin: J1_20
+    function: WBO1 Sensor Voltage (Un)
+    type: wbo
+
+  - pin: J1_21
+    function: Ground
+    type: gnd
+
+  - pin: J1_22
+    class: analog_inputs
+    meta: MM100_IN_O2S_ANALOG
+    ts_name: J1.22 - Aux Analog
+    function: Aux analog input (knock aux); unavailable if CAN wakeup option populated
+    type: av
+
+  - pin: J1_23
+    id: [E11, E11]
+    class: [switch_inputs, event_inputs]
+    ts_name: J1.23 - Flex Fuel
+    function: Flex fuel sensor input
+
+  - pin: J1_24
+    class: analog_inputs
+    meta: MM100_IN_IAT_ANALOG
+    ts_name: J1.24 - IAT
+    function: Intake air temperature sensor
+    type: at
+
+  - pin: J1_25
+    class: outputs
+    meta: MM100_IGN5
+    ts_name: J1.25 - Ignition Aux 5
+    function: Aux ignition output 5, logic level
+    type: ign
+
+  - pin: J1_26
+    function: WBO1 Heater Negative
+    type: wbo
+
+  - pin: J1_27
+    function: WBO1 Vs/Ip (Vm)
+    type: wbo
+
+  - pin: J1_28
+    function: WBO1 CalR (Rtrim)
+    type: wbo
+
+  - pin: J1_29
+    class: analog_inputs
+    meta: MM100_IN_AUX2_ANALOG
+    ts_name: J1.29 - PPS2
+    function: Accelerator pedal position 2
+    type: av
+
+  - pin: J1_30
+    class: analog_inputs
+    meta: MM100_IN_AUX1_ANALOG
+    ts_name: J1.30 - TPS2
+    function: Throttle position sensor 2
+    type: av
+
+  - pin: J1_31
+    class: analog_inputs
+    meta: MM100_IN_MAP1_ANALOG
+    ts_name: J1.31 - MAP
+    function: External MAP sensor
+    type: av
+
+  - pin: J1_32
+    class: analog_inputs
+    meta: MM100_IN_TPS_ANALOG
+    ts_name: J1.32 - TPS1
+    function: Throttle position sensor 1
+    type: av
+
+  - pin: J1_33
+    class: analog_inputs
+    meta: MM100_IN_PPS_ANALOG
+    ts_name: J1.33 - PPS1
+    function: Accelerator pedal position 1
+    type: av
+
+  - pin: J1_34
+    function: Fused 12V output
+    type: 12v

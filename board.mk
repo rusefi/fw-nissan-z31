@@ -1,10 +1,18 @@
 include $(BOARD_DIR)/firmware/firmware.mk
 
+ifneq ($(PROJECT_CPU),simulator)
+BOARDCPPSRC += $(BOARD_DIR)/ext/rusefi/firmware/config/boards/hellen/uaefi121/mega-uaefi.cpp
+endif
 
-BOARDINC += $(BOARD_DIR)/generated/controllers/generated
+BOARDINC += $(BOARD_DIR)/generated/controllers/generated \
+    $(BOARD_DIR)/ext/rusefi/firmware/config/boards/hellen/uaefi121/
 
 # defines SHORT_BOARD_NAME
 include $(BOARD_DIR)/meta-info.env
+
+ifneq ($(PROJECT_CPU),simulator)
+include $(BOARD_DIR)/ext/rusefi/firmware/config/boards/hellen/uaefi121/mega-uaefi.mk
+endif
 
 # this would save some flash while being unable to update WBO controller firmware
 DDEFS += -DEFI_WIDEBAND_FIRMWARE_UPDATE=FALSE
