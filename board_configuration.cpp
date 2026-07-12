@@ -55,7 +55,8 @@ static void customBoardDefaultConfiguration() {
 	engineConfiguration->clt.adcChannel = MM100_IN_CLT_ANALOG; // 23
 	engineConfiguration->iat.adcChannel = MM100_IN_IAT_ANALOG; // J1-24
 
-	engineConfiguration->enableSoftwareKnock = true; // 21 IN_KNOCK
+	// 21 IN_KNOCK: disabled for now, knock ch1 PA2 conflicts with injector 4 on this build
+	engineConfiguration->enableSoftwareKnock = false;
 
 	engineConfiguration->displayLogicLevelsInEngineSniffer = true;
 	engineConfiguration->isSdCardEnabled = true;
