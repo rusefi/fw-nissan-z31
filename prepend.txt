@@ -1,6 +1,9 @@
 ! example of .ini file templating option
 #define ts_show_etb_pins false
 
+! board has a Hellen-One knock module on PA2, show the Knock Control menu
+#define ts_show_software_knock true
+
 
 ! example of table size override
 #define IGN_TRIM_SIZE 8
