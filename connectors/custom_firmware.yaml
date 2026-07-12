@@ -158,6 +158,9 @@ pins:
     type: av
 
   - pin: 34
+    class: analog_inputs
+    meta: MM100_IN_VBATT
+    ts_name: 34 - Voltage From Key
     function: 12V from ignition key (voltage sense PA5)
     type: 12v
 
