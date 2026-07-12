@@ -23,6 +23,7 @@
 #define PIN_29_switch_inputs E14
 #define PIN_29_event_inputs E14
 #define PIN_31 MM100_IN_O2S2_ANALOG
+#define PIN_34 MM100_IN_VBATT
 #define PIN_J1_5_switch_inputs E15
 #define PIN_J1_5_event_inputs E15
 #define PIN_J1_6_switch_inputs A6
