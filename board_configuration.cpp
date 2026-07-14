@@ -27,9 +27,13 @@ static void customBoardConfigOverrides() {
 	setDefaultHellenAtPullUps();
 }
 
+void boardTuneDefaults();
+
 // board-specific configuration setup
 static void customBoardDefaultConfiguration() {
 	setUaefiBoardDefaultConfiguration();
+
+	boardTuneDefaults();
 
 	// OEM pins 104/105 are cross-wired to module channels INJ5/INJ4, see schematic-notes.md
 	engineConfiguration->injectionPins[3] = Gpio::MM100_INJ5; // 104 cylinder 4
