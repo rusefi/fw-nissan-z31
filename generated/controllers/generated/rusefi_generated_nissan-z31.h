@@ -58,8 +58,8 @@
 #define adc_channel_e_EFI_ADC_ERROR 50
 #define adc_channel_e_EFI_ADC_NONE 0
 #define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 49
-#define adc_channel_e_enum 0="NONE",13="23 - CLT",2="31 - MAF",6="34 - Voltage From Key",1="J1.22 - Aux Analog",14="J1.24 - IAT",15="J1.29 - PPS2",9="J1.30 - TPS2",11="J1.31 - MAP",5="J1.32 - TPS1",4="J1.33 - PPS1"
-#define adc_channel_e_fullenum "NONE","J1.22 - Aux Analog","31 - MAF","INVALID","J1.33 - PPS1","J1.32 - TPS1","34 - Voltage From Key","INVALID","INVALID","J1.30 - TPS2","INVALID","J1.31 - MAP","INVALID","23 - CLT","J1.24 - IAT","J1.29 - PPS2"
+#define adc_channel_e_enum 0="NONE",13="23 - CLT",2="31 - MAF",6="34 - Voltage From Key",1="J1.22 - Aux Analog",14="J1.24 - IAT",15="J1.29 - PPS2",9="J1.30 - TPS2",11="J1.31 - MAP",5="J1.32 - TPS1",4="J1.33 - PPS1",12="On-board MAP"
+#define adc_channel_e_fullenum "NONE","J1.22 - Aux Analog","31 - MAF","INVALID","J1.33 - PPS1","J1.32 - TPS1","34 - Voltage From Key","INVALID","INVALID","J1.30 - TPS2","INVALID","J1.31 - MAP","On-board MAP","23 - CLT","J1.24 - IAT","J1.29 - PPS2"
 #define ADC_CHANNEL_NONE 0
 #define afr_sensor_s_size 20
 #define air_pressure_sensor_config_s_size 12
@@ -1628,7 +1628,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges false
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 1825339175
+#define SIGNATURE_HASH 840295651
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -2266,7 +2266,7 @@
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
-#define TS_SIGNATURE "rusEFI main.2026.07.22.nissan-z31.1825339175"
+#define TS_SIGNATURE "rusEFI main.2026.07.22.nissan-z31.840295651"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
