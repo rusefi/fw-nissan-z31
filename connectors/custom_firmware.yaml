@@ -2,6 +2,12 @@ meta: config/boards/hellen_mm100_meta.h
 
 # Nissan Z31 300ZX pinout, see docs/schematic-notes.md
 pins:
+  - pin: On-board MAP
+    meta: MM100_IN_MAP2_ANALOG
+    class: analog_inputs
+    function: Optional MAP Sensor Input
+    ts_name: On-board MAP
+
   # ================== Z31 OEM ECU CONNECTOR - injector/power block ==================
   - pin: 101
     class: outputs
