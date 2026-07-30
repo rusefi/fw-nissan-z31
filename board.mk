@@ -1,5 +1,8 @@
 include $(BOARD_DIR)/firmware/firmware.mk
 
+DDEFS += -DHW_HELLEN_SKIP_BOARD_TYPE=TRUE
+DDEFS += -DSTATIC_BOARD_ID=STATIC_BOARD_ID_UAEFI_Z31
+
 ifneq ($(PROJECT_CPU),simulator)
 BOARDCPPSRC += $(BOARD_DIR)/ext/rusefi/firmware/config/boards/hellen/uaefi121/mega-uaefi.cpp
 endif
