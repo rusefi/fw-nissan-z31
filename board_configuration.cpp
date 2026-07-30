@@ -75,15 +75,15 @@ static Gpio OUTPUTS[] = {
 	Gpio::MM100_INJ5, // 104 INJ_4
 	Gpio::MM100_INJ4, // 105 INJ_5
 	Gpio::MM100_INJ6, // 106 INJ_6
-	Gpio::MM100_INJ8, // 2 LS2 Idle Air Valve
-	Gpio::MM100_OUT_PWM2, // 20 LS4 Fuel Pump Relay
-	Gpio::MM100_IGN7, // 6 LS5_HOT Main Relay
-	Gpio::MM100_INJ7, // J1-8 LS1
-	Gpio::MM100_OUT_PWM1, // J1-7 LS3
+// 	Gpio::MM100_INJ8, // 2 LS2 Idle Air Valve
+// 	Gpio::MM100_OUT_PWM2, // 20 LS4 Fuel Pump Relay
+// 	Gpio::MM100_IGN7, // 6 LS5_HOT Main Relay
+// 	Gpio::MM100_INJ7, // J1-8 LS1
+// 	Gpio::MM100_OUT_PWM1, // J1-7 LS3
 	Gpio::MM100_IGN1, // 5 OUT_IGN power transistor, logic level
-	Gpio::MM100_IGN3, // J1-9 IGN_AUX_3
-	Gpio::MM100_IGN4, // J1-17 IGN_AUX_4
-	Gpio::MM100_IGN5, // J1-25 IGN_AUX_5
+// 	Gpio::MM100_IGN3, // J1-9 IGN_AUX_3
+// 	Gpio::MM100_IGN4, // J1-17 IGN_AUX_4
+// 	Gpio::MM100_IGN5, // J1-25 IGN_AUX_5
 };
 
 int getBoardMetaOutputsCount() {
@@ -91,8 +91,9 @@ int getBoardMetaOutputsCount() {
 }
 
 int getBoardMetaLowSideOutputsCount() {
+        return getBoardMetaOutputsCount() - 1;
     // the last 4 outputs are logic-level ignition channels
-    return getBoardMetaOutputsCount() - 4;
+//    return getBoardMetaOutputsCount() - 4;
 }
 
 Gpio* getBoardMetaOutputs() {
