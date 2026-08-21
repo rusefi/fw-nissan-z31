@@ -3,4 +3,4 @@
 //
 
 #define SIGNATURE_HASH 2001316072
-#define TS_SIGNATURE "rusEFI main.2026.08.20.nissan-z31.2001316072"
+#define TS_SIGNATURE "rusEFI main.2026.08.21.nissan-z31.2001316072"
