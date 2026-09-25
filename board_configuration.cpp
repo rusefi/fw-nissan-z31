@@ -86,16 +86,16 @@ static Gpio OUTPUTS[] = {
 	Gpio::MM100_IGN5, // J1-25 IGN_AUX_5
 };
 
-int getBoardMetaOutputsCount() {
+static int boardGetMetaOutputsCount() {
     return efi::size(OUTPUTS);
 }
 
-int getBoardMetaLowSideOutputsCount() {
+static int boardGetMetaLowSideOutputsCount() {
     // the last 4 outputs are logic-level ignition channels
-   return getBoardMetaOutputsCount() - 4;
+   return boardGetMetaOutputsCount() - 4;
 }
 
-Gpio* getBoardMetaOutputs() {
+static Gpio* boardGetMetaOutputs() {
     return OUTPUTS;
 }
 
@@ -104,6 +104,9 @@ static void customBoardInitHardware() {
 }
 
 void setup_custom_board_overrides() {
+	custom_board_getMetaOutputsCount = boardGetMetaOutputsCount;
+	custom_board_getMetaLowSideOutputsCount = boardGetMetaLowSideOutputsCount;
+	custom_board_getMetaOutputs = boardGetMetaOutputs;
 	custom_board_InitHardware = customBoardInitHardware;
 	custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 	custom_board_ConfigOverrides = customBoardConfigOverrides;
