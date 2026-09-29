@@ -2,5 +2,5 @@
 // CHeaderConsumer was generated automatically by rusEFI tool config_definition-all.jar based on gen_config.sh by SignatureConsumer
 //
 
-#define SIGNATURE_HASH 2775675373
-#define TS_SIGNATURE "rusEFI main.2026.09.28.nissan-z31.2775675373"
+#define SIGNATURE_HASH 1454243204
+#define TS_SIGNATURE "rusEFI main.2026.09.29.nissan-z31.1454243204"
