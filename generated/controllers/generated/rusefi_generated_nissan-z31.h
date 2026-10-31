@@ -2352,7 +2352,7 @@
 #define ts_show_wbo_canbus_set_index true
 #define ts_show_wbo_canbus_set_type false
 #define ts_show_wot_enrichment true
-#define TS_SIGNATURE "rusEFI main.2026.10.30.nissan-z31.153095253"
+#define TS_SIGNATURE "rusEFI main.2026.10.31.nissan-z31.153095253"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
