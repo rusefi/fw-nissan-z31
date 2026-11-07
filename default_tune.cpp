@@ -2,7 +2,7 @@
 
 void boardTuneDefaults() {
     // Nissan VG30E
-    engineConfiguration->displacement = 2.96;
+    engineConfiguration->displacement = 2.96f;
     engineConfiguration->cylindersCount = 6;
     engineConfiguration->firingOrder = FO_1_2_3_4_5_6;
 }
